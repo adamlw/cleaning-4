@@ -21,10 +21,10 @@ merge_test_train <- function(){
 }
 
 extract_mean_deviation <- function(){
-  subset(features, (grepl("mean", features$V2) | grepl("std", features$V2)) 
-                 & !grepl("Freq", features$V2))    
+  feature_names <<- subset(features, (grepl("mean", features$V2) | grepl("std", features$V2)) 
+                         & !grepl("Freq", features$V2))$V1    
 }
-
 
 load_data()
 merge_test_train()
+extract_mean_deviation()
